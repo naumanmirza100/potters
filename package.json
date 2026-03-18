@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "source": "./index.html",
+  "type": "module",
+  "name": "arraish-blue-pottery",
+  "description": "Arraish Blue Pottery — Static frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.453.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0",
+    "@vitejs/plugin-react": "4.3.4",
+    "esbuild": "0.25.5",
+    "globals": "15.12.0",
+    "tailwindcss": "3.4.16",
+    "vite": "6.3.5"
+  }
+}
