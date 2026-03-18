@@ -1,3 +1,16 @@
+import blueFelicityRoundPlatterLarge from '@/assets/images/plates-platters-blue-felicity-round-platter-large-15596838191186.jpg';
+import blueFelicityKarahiSet from '@/assets/images/ceramics-blue-felicity-ceramic-karahi-set-of-2-28257394950226.jpg';
+import blueFelicityTeaSet from '@/assets/images/ceramics-blue-felicity-tea-set-28259183493202.png';
+import arraishTranquilityBowl from '@/assets/images/arraish_tranquility_bowl.jpg';
+import blueFelicityFlatDish from '@/assets/images/ceramics-blue-felicity-flat-dish-28259862872146.jpg';
+import blueFelicityAromaticWarmer from '@/assets/images/ceramics-blue-felicity-aromatic-warmer-28259031122002.jpg';
+import arraishProduct1 from '@/assets/images/arraish_product_1.jpg';
+import arraishProduct2 from '@/assets/images/arraish_product_2.jpg';
+import arraishProduct3 from '@/assets/images/arraish_product_3.jpg';
+import arraishProduct4 from '@/assets/images/arraish_product_4.jpg';
+import arraishProduct5 from '@/assets/images/arraish_product_5.jpg';
+import arraishProduct6 from '@/assets/images/arraish_product_6.jpg';
+
 export type Category = {
   title: string;
   slug: string;
@@ -11,7 +24,7 @@ export const CATEGORIES: Category[] = [
   {
     title: "Plates And Platters",
     slug: "plates-platters",
-    imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_8-min_3345d8b7-6f29-4d6d-9b57-61e27a6d8143.jpg?v=1706691880&width=533",
+    imageSrc: blueFelicityRoundPlatterLarge,
     imageAlt: "Plates And Platters",
     description: "Plates and Platters That Bring Style to Your Table. Handcrafted with care, these plates blend timeless blue pottery artistry with everyday functionality.",
     href: "/collections/plates-platters",
@@ -19,7 +32,7 @@ export const CATEGORIES: Category[] = [
   {
     title: "Ceramic Blue Pottery Karahi",
     slug: "ceramic-blue-pottery-karahies",
-    imageSrc: "https://arraish.com/cdn/shop/files/DSC_0045_a2c114f0-466f-4a00-8354-f58c49e7943c.jpg?v=1708453418&width=533",
+    imageSrc: blueFelicityKarahiSet,
     imageAlt: "Blue Pottery Karahi",
     description: "Blue Pottery Karahi Designs That Add Tradition to Every Table. Serve your favourite dishes in authentic Multani style.",
     href: "/collections/ceramic-blue-pottery-karahies",
@@ -27,7 +40,7 @@ export const CATEGORIES: Category[] = [
   {
     title: "Blue Pottery Tea Sets",
     slug: "tea-sets-blue-pottery",
-    imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_8-min_3345d8b7-6f29-4d6d-9b57-61e27a6d8143.jpg?v=1706691880&width=800",
+    imageSrc: blueFelicityTeaSet,
     imageAlt: "Multani Blue Pottery Tea Sets",
     description: "Unique Designs for Your Perfect Tea Time. Exquisite tea sets that make every cup a ritual.",
     href: "/collections/tea-sets-blue-pottery",
@@ -35,7 +48,7 @@ export const CATEGORIES: Category[] = [
   {
     title: "Bowls",
     slug: "bowls",
-    imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_61-min.jpg?v=1706693730&width=533",
+    imageSrc: arraishTranquilityBowl,
     imageAlt: "Multani Blue Pottery Ceramic Bowls",
     description: "Handcrafted Ceramic Bowls for Every Meal. Bring charm to your table with our stunning range of bowls.",
     href: "/collections/bowls",
@@ -43,7 +56,7 @@ export const CATEGORIES: Category[] = [
   {
     title: "Serving Dishes",
     slug: "serving-dishes",
-    imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_37-min.jpg?v=1706692775&width=533",
+    imageSrc: blueFelicityFlatDish,
     imageAlt: "Blue Pottery Serving Dishes",
     description: "Serving Dishes That Add Warmth to Every Meal. Present your meals beautifully with our artisan serving collection.",
     href: "/collections/serving-dishes",
@@ -51,7 +64,7 @@ export const CATEGORIES: Category[] = [
   {
     title: "Table Decoration",
     slug: "table-decoration",
-    imageSrc: "https://arraish.com/cdn/shop/files/Blue_Felicity_Aromatic_Warmer_1_360x.jpg?v=1680516596",
+    imageSrc: blueFelicityAromaticWarmer,
     imageAlt: "Table Decoration",
     description: "Decorate your table with stunning hand-painted blue pottery pieces that captivate every guest.",
     href: "/collections/table-decoration",
@@ -80,12 +93,12 @@ export const DECOR_SUBCATEGORIES = [
 ];
 
 export const DESIGN_FAMILY = [
-  { label: "Blue Felicity",   slug: "blue-felicity",   count: 48, priceRange: "Rs. 999 – 54,999", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_8-min_3345d8b7-6f29-4d6d-9b57-61e27a6d8143.jpg?v=1706691880&width=533",  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
-  { label: "Blue Pattern",    slug: "blue-pattern",    count: 12, priceRange: "Rs. 999 – 49,999", imageSrc: "https://arraish.com/cdn/shop/files/DSC_0073_02a8062e-9892-497c-ad44-6330ce148962.jpg?v=1708453629&width=533",  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
-  { label: "Tranquility",     slug: "tranquility",     count: 28, priceRange: "Rs. 999 – 47,999", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_2-min_813c9e66-681b-4235-86ef-d79040ffc567.jpg?v=1706691605&width=533",  showBadge: false, primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-25.svg" },
-  { label: "Serina",          slug: "serina",          count: 45, priceRange: "Rs. 1,999 – 47,999", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_18-min.jpg?v=1706691632&width=533",  showBadge: false, primaryIconSrc: "" },
-  { label: "Blue Flower",     slug: "blue-flower",     count: 26, priceRange: "Rs. 999 – 19,999", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_14-min_a1506456-6512-4c27-a006-258d4a796a46.jpg?v=1706691924&width=533",  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
-  { label: "Blue Celico",     slug: "blue-celico",     count: 12, priceRange: "Rs. 1,199 – 4,999", imageSrc: "https://arraish.com/cdn/shop/files/DSC_0109_739c9430-8041-4c12-9c4c-283158c9735a.jpg?v=1708453880&width=533",  showBadge: false, primaryIconSrc: "" },
-  { label: "Spring Pattern",  slug: "spring-pattern",  count: 2,  priceRange: "Rs. 3,999 – 4,499", imageSrc: "https://arraish.com/cdn/shop/files/DSC_0116_ea597400-9854-4734-b26a-9f5b66d489b0.jpg?v=1708453913&width=533",  showBadge: false, primaryIconSrc: "" },
-  { label: "Slightly Broken", slug: "slightly-broken", count: 0,  priceRange: null,               imageSrc: "https://arraish.com/cdn/shop/files/DSC_0137_62c5b7df-e1c9-4402-be5c-f05051919864.jpg?v=1708454045&width=533",  showBadge: false, primaryIconSrc: "" },
+  { label: "Blue Felicity",   slug: "blue-felicity",   count: 48, priceRange: "Rs. 999 – 54,999", imageSrc: blueFelicityRoundPlatterLarge,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
+  { label: "Blue Pattern",    slug: "blue-pattern",    count: 12, priceRange: "Rs. 999 – 49,999", imageSrc: arraishProduct2,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
+  { label: "Tranquility",     slug: "tranquility",     count: 28, priceRange: "Rs. 999 – 47,999", imageSrc: arraishTranquilityBowl,  showBadge: false, primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-25.svg" },
+  { label: "Serina",          slug: "serina",          count: 45, priceRange: "Rs. 1,999 – 47,999", imageSrc: arraishProduct5,  showBadge: false, primaryIconSrc: "" },
+  { label: "Blue Flower",     slug: "blue-flower",     count: 26, priceRange: "Rs. 999 – 19,999", imageSrc: arraishProduct6,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
+  { label: "Blue Celico",     slug: "blue-celico",     count: 12, priceRange: "Rs. 1,199 – 4,999", imageSrc: arraishProduct3,  showBadge: false, primaryIconSrc: "" },
+  { label: "Spring Pattern",  slug: "spring-pattern",  count: 2,  priceRange: "Rs. 3,999 – 4,499", imageSrc: arraishProduct4,  showBadge: false, primaryIconSrc: "" },
+  { label: "Slightly Broken", slug: "slightly-broken", count: 0,  priceRange: null,               imageSrc: blueFelicityKarahiSet,  showBadge: false, primaryIconSrc: "" },
 ];

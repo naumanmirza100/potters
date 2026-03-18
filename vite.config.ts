@@ -5,7 +5,7 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  publicDir: "./static",
+  publicDir: "public",
   base: "./",
   css: {
     postcss: {
