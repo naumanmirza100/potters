@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import heroBannerImage from '@/assets/images/hero4.jpeg';
 
 export const HeroBanner = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -9,10 +10,10 @@ export const HeroBanner = () => {
 
   return (
     <section id="hero" className="text-[15px] box-border caret-transparent leading-[27px] md:text-base md:leading-[28.8px]">
-      <div className="relative text-[15px] box-border caret-transparent flex flex-wrap isolate leading-[27px] min-h-0 md:text-base md:flex-nowrap md:leading-[28.8px] md:min-h-[560px] after:accent-auto after:bg-black after:box-border after:caret-transparent after:text-zinc-800/80 after:block after:text-[15px] after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[0.6px] after:leading-[27px] after:list-outside after:list-disc after:opacity-40 after:pointer-events-auto after:absolute after:text-start after:no-underline after:indent-[0px] after:normal-case after:visible after:w-full after:z-[1] after:border-separate after:top-0 after:font-maven_pro after:md:text-base after:md:leading-[28.8px]">
+      <div className="relative text-[15px] box-border caret-transparent flex flex-wrap isolate leading-[27px] min-h-0 md:text-base md:flex-nowrap md:leading-[28.8px] md:min-h-[560px] after:accent-auto after:bg-black after:box-border after:caret-transparent after:text-zinc-800/80 after:block after:text-[15px] after:not-italic after:normal-nums after:font-normal after:h-full after:tracking-[0.6px] after:leading-[27px] after:list-outside after:list-disc after:opacity-20 after:pointer-events-auto after:absolute after:text-start after:no-underline after:indent-[0px] after:normal-case after:visible after:w-full after:z-[1] after:border-separate after:top-0 after:font-maven_pro after:md:text-base after:md:leading-[28.8px]">
         <div className="absolute text-[15px] bg-zinc-800/10 box-border caret-transparent h-full leading-[27px] w-full overflow-hidden left-0 top-0 md:text-base md:leading-[28.8px]">
           <img
-            src="https://arraish.com/cdn/shop/files/Arraish_Product_Shots_4-min_94117d2c-7dfc-47a5-85a3-8a51b17cf479.jpg?v=1706691543&width=1500"
+            src={heroBannerImage}
             alt=""
             sizes="100vw"
             className={`absolute text-[15px] aspect-[auto_5472_/_3348] box-border caret-transparent h-full leading-[27px] max-w-full object-cover align-baseline w-full left-0 top-0 md:text-base md:leading-[28.8px] transition-transform duration-[1.5s] ease-out ${isLoaded ? 'scale-100' : 'scale-105'}`}

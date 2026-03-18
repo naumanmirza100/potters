@@ -1,13 +1,20 @@
 import { useState, useRef } from 'react';
 import { CategoryCard } from "@/sections/Main/components/CategorySlider/CategoryCard";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import blueFelicityRoundPlatterLarge from '@/assets/images/plates-platters-blue-felicity-round-platter-large-15596838191186.jpg';
+import blueFelicityKarahiSet from '@/assets/images/ceramics-blue-felicity-ceramic-karahi-set-of-2-28257394950226.jpg';
+import blueFelicityTeaSet from '@/assets/images/ceramics-blue-felicity-tea-set-28259183493202.png';
+import arraishTranquilityBowl from '@/assets/images/arraish_tranquility_bowl.jpg';
+import blueFelicityFlatDish from '@/assets/images/ceramics-blue-felicity-flat-dish-28259862872146.jpg';
+import blueFelicityAromaticWarmer from '@/assets/images/ceramics-blue-felicity-aromatic-warmer-28259031122002.jpg';
+
 const SEED_CATEGORIES = [
-  { title: "Plates And Platters", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_8-min_3345d8b7-6f29-4d6d-9b57-61e27a6d8143.jpg?v=1706691880&width=533", imageAlt: "Plates And Platters", href: "/collections/plates-platters", description: "Plates and Platters That Bring Style to Your Table Your dining setup..." },
-  { title: "Ceramic Blue Pottery Karahi", imageSrc: "https://arraish.com/cdn/shop/files/DSC_0045_a2c114f0-466f-4a00-8354-f58c49e7943c.jpg?v=1708453418&width=533", imageAlt: "Blue Pottery Karahi", href: "/collections/ceramic-blue-pottery-karahies", description: "Blue Pottery Karahi Designs That Add Tradition to Every Table Serve your..." },
-  { title: "Blue Pottery Tea Sets", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_8-min_3345d8b7-6f29-4d6d-9b57-61e27a6d8143.jpg?v=1706691880&width=800", imageAlt: "Multani Blue Pottery Tea Sets", href: "/collections/tea-sets-blue-pottery", description: "Unique Designs for Your Perfect Tea Time Welcome to our Blue Pottery..." },
-  { title: "Bowls", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_61-min.jpg?v=1706693730&width=533", imageAlt: "Multani Blue Pottery Ceramic Bowls", href: "/collections/bowls", description: "Handcrafted Ceramic Bowls for Every Meal Bring charm to your table with..." },
-  { title: "Serving Dishes", imageSrc: "https://arraish.com/cdn/shop/files/Arraish_Product_Shots_37-min.jpg?v=1706692775&width=533", imageAlt: "Blue Pottery Serving Dishes", href: "/collections/serving-dishes", description: "Serving Dishes That Add Warmth to Every Meal Present your meals beautifully..." },
-  { title: "Table Decoration", imageSrc: "https://arraish.com/cdn/shop/files/Blue_Felicity_Aromatic_Warmer_1_360x.jpg?v=1680516596", imageAlt: "Table Decoration", href: "/collections/table-decoration" },
+  { title: "Plates And Platters", imageSrc: blueFelicityRoundPlatterLarge, imageAlt: "Plates And Platters", href: "/collections/plates-platters", description: "Plates and Platters That Bring Style to Your Table Your dining setup..." },
+  { title: "Ceramic Blue Pottery Karahi", imageSrc: blueFelicityKarahiSet, imageAlt: "Blue Pottery Karahi", href: "/collections/ceramic-blue-pottery-karahies", description: "Blue Pottery Karahi Designs That Add Tradition to Every Table Serve your..." },
+  { title: "Blue Pottery Tea Sets", imageSrc: blueFelicityTeaSet, imageAlt: "Multani Blue Pottery Tea Sets", href: "/collections/tea-sets-blue-pottery", description: "Unique Designs for Your Perfect Tea Time Welcome to our Blue Pottery..." },
+  { title: "Bowls", imageSrc: arraishTranquilityBowl, imageAlt: "Multani Blue Pottery Ceramic Bowls", href: "/collections/bowls", description: "Handcrafted Ceramic Bowls for Every Meal Bring charm to your table with..." },
+  { title: "Serving Dishes", imageSrc: blueFelicityFlatDish, imageAlt: "Blue Pottery Serving Dishes", href: "/collections/serving-dishes", description: "Serving Dishes That Add Warmth to Every Meal Present your meals beautifully..." },
+  { title: "Table Decoration", imageSrc: blueFelicityAromaticWarmer, imageAlt: "Table Decoration", href: "/collections/table-decoration" },
 ];
 
 const ICON_MAP: Record<string, string> = {
