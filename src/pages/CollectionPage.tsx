@@ -116,7 +116,7 @@ export const CollectionPage = () => {
             <Link to="/" className="mt-4 inline-block text-blue-950 underline text-sm">Back to home</Link>
           </div>
         ) : (
-          <ul role="list" className={`gap-x-3 flex flex-wrap gap-y-3 ${isVisible ? 'stagger-children' : ''}`}>
+          <ul role="list" className={`gap-x-1.5 md:gap-x-3 flex flex-wrap gap-y-1.5 md:gap-y-3 ${isVisible ? 'stagger-children' : ''}`}>
             {sorted.map((p, i) => (
               <ProductCard key={p.id} product={p} index={i} />
             ))}
