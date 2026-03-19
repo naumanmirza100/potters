@@ -11,15 +11,25 @@ export type CategoryCardProps = {
   index?: number;
 };
 
+import { useState } from 'react';
+
 export const CategoryCard = (props: CategoryCardProps) => {
+  const [imageSrc, setImageSrc] = useState(props.imageSrc);
+
+  const handleImageError = () => {
+    // Use a default image if the original fails
+    if (imageSrc !== '/assets/images/royalimages/blue-pattern-quarter-plate.jpg') {
+      setImageSrc('/assets/images/royalimages/blue-pattern-medium-serving-dish.jpg');
+    }
+  };
+
   const getHref = () => {
-    // Convert external URLs to internal anchors
-    return '#categories';
+    return props.href;
   };
 
   return (
     <li
-      className={`text-[15px] box-content caret-transparent grow shrink-0 leading-[27px] max-w-full min-h-[auto] min-w-[35%] snap-start w-[calc(100%_-_36px)] py-[5px] md:text-base md:box-border md:leading-[28.8px] md:max-w-[calc(16.66%_-_10px)] md:min-w-[auto] md:w-[calc(16.66%_-_10px)] md:py-0 ${props.liClassName ?? ""}`.trim()}
+      className={`text-[15px] box-content caret-transparent grow shrink-0 leading-[27px] max-w-full min-h-[auto] min-w-[35%] snap-start w-[calc(100%_-_36px)] py-[5px] md:text-base md:box-border md:leading-[28.8px] md:max-w-[calc(16.66%_-_12px)] md:min-w-[auto] md:flex-[0_1_calc(16.66%_-_12px)] md:py-0 ${props.liClassName ?? ""}`.trim()}
       style={{ animationDelay: `${(props.index || 0) * 100}ms` }}
     >
       <div className="relative text-[15px] box-content caret-transparent h-full leading-[27px] md:text-base md:box-border md:leading-[28.8px]">
@@ -28,9 +38,10 @@ export const CategoryCard = (props: CategoryCardProps) => {
             <div className="absolute text-[15px] box-border caret-transparent leading-[27px] w-full z-0 overflow-hidden rounded-t-lg inset-y-0 md:text-base md:leading-[28.8px] img-hover-zoom">
               <div className="absolute text-[15px] box-border caret-transparent leading-[27px] w-full overflow-hidden inset-y-0 md:text-base md:leading-[28.8px]">
                 <img
-                  src={props.imageSrc}
+                  src={imageSrc}
                   sizes="(min-width: 1200px) 366px, (min-width: 750px) calc((100vw - 10rem) / 2), calc(100vw - 3rem)"
                   alt={props.imageAlt}
+                  onError={handleImageError}
                   className={`absolute text-[15px] box-border caret-transparent h-full leading-[27px] max-w-full object-cover align-baseline w-full left-0 top-0 md:text-base md:leading-[28.8px] ${props.imageClassName}`}
                 />
               </div>

@@ -87,15 +87,10 @@ export const ProductPage = () => {
               )}
               {product.isSale && product.originalPrice && (
                 <span className="text-xs font-bold text-green-600 bg-green-50 border border-green-200 px-2 py-0.5 rounded-full">
-                  {Math.round((1 - parseFloat(product.currentPrice.replace(/[^0-9.]/g, '').replace(/,/g, '')) / parseFloat(product.originalPrice.replace(/[^0-9.]/g, '').replace(/,/g, ''))) * 100)}% OFF
+                  {Math.round((1 - parseFloat((product.currentPrice.match(/(\d[\d,]*\.?\d*)/) || [])[1]?.replace(/,/g, '') ?? '0') / parseFloat((product.originalPrice.match(/(\d[\d,]*\.?\d*)/) || [])[1]?.replace(/,/g, '') ?? '1')) * 100)}% OFF
                 </span>
               )}
             </div>
-
-            {/* Description */}
-            {product.description && (
-              <p className="text-neutral-600 text-sm leading-relaxed">{product.description}</p>
-            )}
 
             {/* Category badge */}
             <div className="flex flex-wrap gap-2">
@@ -145,6 +140,17 @@ export const ProductPage = () => {
             </div>
           </div>
         </div>
+
+        {/* Product Description Section */}
+        {product.description && (
+          <div className="mt-8 bg-amber-50 rounded-2xl p-6 md:p-10 shadow-sm">
+            <h2 className="text-blue-950 text-lg font-bold mb-4 tracking-wide">Product Details</h2>
+            <div
+              className="text-neutral-600 text-sm leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: product.description }}
+            />
+          </div>
+        )}
 
         {/* Related products */}
         {related.length > 0 && (

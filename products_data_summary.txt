@@ -1,0 +1,52 @@
+Total Products: 462
+Total Images: 472
+Categories: 11
+
+Categories:
+  Animals & Pet Supplies: 1 products
+    Sample handles:
+      - duck
+  Apparel & Accessories: 18 products
+    Sample handles:
+      - apple-watch-1
+      - key-ring
+      - cup-style-watch
+  Arts & Entertainment: 3 products
+    Sample handles:
+      - handmade-artisanal-special-ceramic-mold-bc-l
+      - fish
+      - camel-skin-dhol
+  Food, Beverages & Tobacco: 3 products
+    Sample handles:
+      - fruit
+      - grapes
+      - fruits-set
+  Hardware: 1 products
+    Sample handles:
+      - wall-plate
+  Health & Beauty: 3 products
+    Sample handles:
+      - round-jewelry-box
+      - jewelry-box
+      - powder-pot
+  Home & Garden: 414 products
+    Sample handles:
+      - mug-large-set-of-2
+      - antique-small-bowl-set-of-2
+      - blue-pattern-large-square-dish
+  Office Supplies: 14 products
+    Sample handles:
+      - hexagon-style-watch-and-pen-holder
+      - office-set-1
+      - double-pen-holder-wth-watch
+  Religious & Ceremonial: 1 products
+    Sample handles:
+      - tasbeeh
+  Toys & Games: 3 products
+    Sample handles:
+      - chess-set
+      - chess
+      - dagger
+  Vehicles & Parts: 1 products
+    Sample handles:
+      - ship

@@ -1,21 +1,7 @@
 import { useState, useRef } from 'react';
 import { CategoryCard } from "@/sections/Main/components/CategorySlider/CategoryCard";
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import blueFelicityRoundPlatterLarge from '@/assets/images/plates-platters-blue-felicity-round-platter-large-15596838191186.jpg';
-import blueFelicityKarahiSet from '@/assets/images/ceramics-blue-felicity-ceramic-karahi-set-of-2-28257394950226.jpg';
-import blueFelicityTeaSet from '@/assets/images/ceramics-blue-felicity-tea-set-28259183493202.png';
-import arraishTranquilityBowl from '@/assets/images/arraish_tranquility_bowl.jpg';
-import blueFelicityFlatDish from '@/assets/images/ceramics-blue-felicity-flat-dish-28259862872146.jpg';
-import blueFelicityAromaticWarmer from '@/assets/images/ceramics-blue-felicity-aromatic-warmer-28259031122002.jpg';
-
-const SEED_CATEGORIES = [
-  { title: "Plates And Platters", imageSrc: blueFelicityRoundPlatterLarge, imageAlt: "Plates And Platters", href: "/collections/plates-platters", description: "Plates and Platters That Bring Style to Your Table Your dining setup..." },
-  { title: "Ceramic Blue Pottery Karahi", imageSrc: blueFelicityKarahiSet, imageAlt: "Blue Pottery Karahi", href: "/collections/ceramic-blue-pottery-karahies", description: "Blue Pottery Karahi Designs That Add Tradition to Every Table Serve your..." },
-  { title: "Blue Pottery Tea Sets", imageSrc: blueFelicityTeaSet, imageAlt: "Multani Blue Pottery Tea Sets", href: "/collections/tea-sets-blue-pottery", description: "Unique Designs for Your Perfect Tea Time Welcome to our Blue Pottery..." },
-  { title: "Bowls", imageSrc: arraishTranquilityBowl, imageAlt: "Multani Blue Pottery Ceramic Bowls", href: "/collections/bowls", description: "Handcrafted Ceramic Bowls for Every Meal Bring charm to your table with..." },
-  { title: "Serving Dishes", imageSrc: blueFelicityFlatDish, imageAlt: "Blue Pottery Serving Dishes", href: "/collections/serving-dishes", description: "Serving Dishes That Add Warmth to Every Meal Present your meals beautifully..." },
-  { title: "Table Decoration", imageSrc: blueFelicityAromaticWarmer, imageAlt: "Table Decoration", href: "/collections/table-decoration" },
-];
+import { CATEGORIES } from '@/data/categories';
 
 const ICON_MAP: Record<string, string> = {
   titleIcon: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-25.svg",
@@ -37,7 +23,7 @@ export const CategorySlider = () => {
   const sliderRef = useRef<HTMLUListElement>(null);
   const { ref, isVisible } = useScrollAnimation(0.2);
 
-  const totalSlides = SEED_CATEGORIES.length;
+  const totalSlides = CATEGORIES.length;
 
   const scrollToSlide = (direction: 'prev' | 'next') => {
     if (!sliderRef.current) return;
@@ -49,7 +35,7 @@ export const CategorySlider = () => {
     sliderRef.current.scrollBy({ left: direction === 'next' ? scrollAmount : -scrollAmount, behavior: 'smooth' });
   };
 
-  const displayCategories = SEED_CATEGORIES;
+  const displayCategories = CATEGORIES;
 
   return (
     <section id="categories" className="text-[15px] box-border caret-transparent leading-[27px] md:text-base md:leading-[28.8px]">
@@ -64,9 +50,9 @@ export const CategorySlider = () => {
             </a>
           </div>
           <div className="relative text-[15px] box-border caret-transparent block leading-[27px] md:text-base md:leading-[28.8px]">
-            <ul ref={sliderRef} role="list" className={`relative text-[15px] box-border caret-transparent gap-x-1.5 flex flex-nowrap leading-[27px] list-none gap-y-1.5 scroll-smooth w-full overflow-auto mb-2.5 pl-0 scroll-pl-[15px] md:static md:text-base md:gap-x-3 md:flex-wrap md:leading-[28.8px] md:gap-y-3 md:scroll-auto md:snap-none md:w-auto md:overflow-visible md:mb-0 md:scroll-pl-[auto] video-slider ${isVisible ? 'stagger-children' : ''}`}>
+            <ul ref={sliderRef} role="list" className={`relative text-[15px] box-border caret-transparent gap-x-1.5 flex flex-nowrap leading-[27px] list-none gap-y-1.5 scroll-smooth w-full overflow-auto mb-2.5 pl-0 scroll-pl-[15px] md:static md:text-base md:gap-x-3 md:flex-wrap md:leading-[28.8px] md:gap-y-3 md:scroll-auto md:snap-none md:w-full md:overflow-visible md:mb-0 md:scroll-pl-[auto] md:-mx-3 md:px-3 video-slider ${isVisible ? 'stagger-children' : ''}`}>
               {displayCategories.map((cat, i) => (
-                <CategoryCard key={i} liClassName={i === 0 ? "ml-[15px]" : ""} imageSrc={cat.imageSrc} imageAlt={cat.imageAlt} imageClassName={IMAGE_CLASS_MAP[cat.title] ?? "aspect-[auto_3024_/_3024]"} title={cat.title} href={cat.href} description={cat.description} descriptionIconSrc={cat.description ? ICON_MAP.descIcon : undefined} titleIconSrc={cat.title === "Table Decoration" ? ICON_MAP.tableIcon : ICON_MAP.titleIcon} index={i} />
+                <CategoryCard key={i} liClassName={i === 0 ? "ml-[15px] md:ml-0" : ""} imageSrc={cat.imageSrc} imageAlt={cat.imageAlt} imageClassName={IMAGE_CLASS_MAP[cat.title] ?? "aspect-[auto_3024_/_3024]"} title={cat.title} href={cat.href} description={cat.description} descriptionIconSrc={cat.description ? ICON_MAP.descIcon : undefined} titleIconSrc={cat.title === "Table Decoration" ? ICON_MAP.tableIcon : ICON_MAP.titleIcon} index={i} />
               ))}
             </ul>
             <div className="text-[15px] items-center box-border caret-transparent flex justify-center leading-[27px] md:text-base md:hidden md:leading-[28.8px]">
