@@ -8,11 +8,49 @@ type ProductCardProps = {
   index?: number;
 };
 
+const CATEGORY_FALLBACK_IMAGES: Record<string, string[]> = {
+  'Plates & Platters': [
+    '/assets/images/royalimages/blue-pattern-quarter-plate.jpg',
+    '/assets/images/royalimages/blue-pattern-dinner-plate.jpg',
+    '/assets/images/royalimages/antique_dark_blue_platter_large.jpg',
+  ],
+  'Bowls': [
+    '/assets/images/royalimages/blue_felicity_large_bowl.webp',
+    '/assets/images/royalimages/blue_flower_bowl_with_cap.jpg',
+  ],
+  'Serving Dishes': [
+    '/assets/images/royalimages/blue-pattern-medium-serving-dish.jpg',
+    '/assets/images/royalimages/blue_celico_serving_dish.webp',
+  ],
+  'Karahi Handies & Cover Pots': [
+    '/assets/images/royalimages/classic_blue_karahi_traditional_wok_blue_pottery.webp',
+  ],
+  'Tea Sets': [
+    '/assets/images/royalimages/serina_blue_tea_set.webp',
+  ],
+};
+
+function getFallbackImage(productName: string, category?: string): string {
+  if (category && CATEGORY_FALLBACK_IMAGES[category]) {
+    const images = CATEGORY_FALLBACK_IMAGES[category];
+    return images[Math.floor(Math.random() * images.length)];
+  }
+  return '/assets/images/royalimages/blue-pattern-quarter-plate.jpg';
+}
+
 export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
+  const [imageSrc, setImageSrc] = useState(product.imageSrc);
   const { addToCart, setIsOpen } = useCart();
   const navigate = useNavigate();
+
+  const handleImageError = () => {
+    const fallback = getFallbackImage(product.productName, product.category);
+    if (fallback !== imageSrc) {
+      setImageSrc(fallback);
+    }
+  };
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -39,8 +77,9 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             <div className="absolute box-border leading-[27px] w-[calc(100%_-_24px)] z-0 overflow-hidden m-3 inset-y-0 img-hover-zoom">
               <div className="absolute box-border leading-[27px] w-full overflow-hidden inset-y-0">
                 <img
-                  src={product.imageSrc}
+                  src={imageSrc}
                   alt={product.imageAlt}
+                  onError={handleImageError}
                   className="absolute box-border h-full leading-[27px] max-w-full object-cover w-full left-0 top-0 aspect-square"
                 />
               </div>
@@ -58,15 +97,15 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           {/* Details */}
           <div className="box-border grid grow grid-rows-[max-content_minmax(0px,1fr)_max-content_auto] leading-[27px] w-full">
             <div className="row-start-2 min-h-[auto] min-w-[auto] py-[13px]">
-              <p className="text-white text-[12.6px] tracking-[0.63px] leading-[16.2px] md:text-[13.65px] md:leading-[17.55px]">
+              <p className="text-neutral-800 text-[12.6px] tracking-[0.63px] leading-[16.2px] md:text-[13.65px] md:leading-[17.55px]">
                 <span className="block text-[12.6px] leading-[16.2px] md:text-[13.65px] md:leading-[17.55px] line-clamp-2">
                   {product.productName}
                 </span>
               </p>
-              <div className="text-white text-base tracking-[1px] leading-6 mt-[7px]">
+              <div className="text-neutral-800 text-base tracking-[1px] leading-6 mt-[7px]">
                 {product.isSale ? (
                   <div className="flex flex-wrap gap-1 items-center">
-                    <s className="text-white/60 text-[13px] line-through">{product.originalPrice}</s>
+                    <s className="text-neutral-600 text-[13px] line-through">{product.originalPrice}</s>
                     <span className="text-green-400 font-medium">{product.currentPrice}</span>
                   </div>
                 ) : (

@@ -1,0 +1,23 @@
+{
+  "total_products": 462,
+  "total_images": 472,
+  "categories": {
+    "Home & Garden": 414,
+    "Arts & Entertainment": 3,
+    "Apparel & Accessories": 18,
+    "Office Supplies": 14,
+    "Food, Beverages & Tobacco": 3,
+    "Toys & Games": 3,
+    "Religious & Ceremonial": 1,
+    "Vehicles & Parts": 1,
+    "Animals & Pet Supplies": 1,
+    "Hardware": 1,
+    "Health & Beauty": 3
+  },
+  "sample_product": {
+    "handle": "mug-large-set-of-2",
+    "title": "Mug Large - Set of 2",
+    "category": "Home & Garden > Kitchen & Dining > Tableware > Coffee & Tea Sets > Tea Sets",
+    "price": "28.00"
+  }
+}

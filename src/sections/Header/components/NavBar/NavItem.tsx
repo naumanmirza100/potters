@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { TABLEWARE_SUBCATEGORIES, DECOR_SUBCATEGORIES, DESIGN_FAMILY } from '@/data/categories';
 
 export type NavItemProps = {
@@ -61,8 +61,8 @@ export const NavItem = (props: NavItemProps) => {
               <ul className="py-2">
                 {dropdownItems.map((item: any) => (
                   <li key={item.label}>
-                    <button
-                      onClick={() => { navigate(item.href); setIsOpen(false); }}
+                    <Link
+                      to={item.href}
                       className="flex items-center justify-between w-full px-5 py-2.5 text-sm text-neutral-700 hover:bg-blue-950/5 hover:text-blue-950 transition-colors group/item text-left"
                     >
                       <span className="font-medium flex items-center gap-1.5">
@@ -74,7 +74,7 @@ export const NavItem = (props: NavItemProps) => {
                       {item.count != null && item.count > 0 && (
                         <span className="text-[11px] text-neutral-400 group-hover/item:text-blue-950/60 ml-2">{item.count}</span>
                       )}
-                    </button>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import heroBannerImage from '@/assets/images/hero4.jpeg';
+import heroBannerImage from '@/assets/images/header/mainheading.jpeg';
 
 export const HeroBanner = () => {
   const [isLoaded, setIsLoaded] = useState(false);

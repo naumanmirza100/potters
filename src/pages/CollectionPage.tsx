@@ -27,7 +27,10 @@ const SORT_OPTIONS = [
   { label: "Name A-Z", value: "name-asc" },
 ];
 
-const parsePrice = (p: string) => parseFloat(p.replace(/[^0-9.]/g, '').replace(/,/g, ''));
+const parsePrice = (p: string) => {
+  const match = p.match(/(\d[\d,]*\.?\d*)/);
+  return match ? parseFloat(match[1].replace(/,/g, '')) : 0;
+};
 
 export const CollectionPage = () => {
   const { slug } = useParams<{ slug: string }>();

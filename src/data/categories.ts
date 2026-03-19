@@ -1,15 +1,15 @@
-import blueFelicityRoundPlatterLarge from '@/assets/images/plates-platters-blue-felicity-round-platter-large-15596838191186.jpg';
-import blueFelicityKarahiSet from '@/assets/images/ceramics-blue-felicity-ceramic-karahi-set-of-2-28257394950226.jpg';
-import blueFelicityTeaSet from '@/assets/images/ceramics-blue-felicity-tea-set-28259183493202.png';
-import arraishTranquilityBowl from '@/assets/images/arraish_tranquility_bowl.jpg';
-import blueFelicityFlatDish from '@/assets/images/ceramics-blue-felicity-flat-dish-28259862872146.jpg';
-import blueFelicityAromaticWarmer from '@/assets/images/ceramics-blue-felicity-aromatic-warmer-28259031122002.jpg';
-import arraishProduct1 from '@/assets/images/arraish_product_1.jpg';
-import arraishProduct2 from '@/assets/images/arraish_product_2.jpg';
-import arraishProduct3 from '@/assets/images/arraish_product_3.jpg';
-import arraishProduct4 from '@/assets/images/arraish_product_4.jpg';
-import arraishProduct5 from '@/assets/images/arraish_product_5.jpg';
-import arraishProduct6 from '@/assets/images/arraish_product_6.jpg';
+import blueFelicityRoundPlatterLarge from '@/assets/images/royalimages/blue_pattern_large_serving_dish.jpg';
+import blueFelicityKarahiSet from '@/assets/images/royalimages/serina_blue_large_ceramic_karahi.webp';
+import blueFelicityTeaSet from '@/assets/images/royalimages/serina_blue_tea_set.webp';
+import arraishTranquilityBowl from '@/assets/images/royalimages/serina_blue_large_bowl.webp';
+import blueFelicityFlatDish from '@/assets/images/royalimages/blue_felicity_flat_dish.webp';
+import blueFelicityAromaticWarmer from '@/assets/images/royalimages/blue_pottery_table_decor_platter.webp';
+import arraishProduct1 from '@/assets/images/royalimages/blue_pattern_large_square_dish.jpg';
+import arraishProduct2 from '@/assets/images/royalimages/blue_pattern_medium_serving_dish.jpg';
+import arraishProduct3 from '@/assets/images/royalimages/blue_pattern_quarter_plate.jpg';
+import arraishProduct4 from '@/assets/images/royalimages/blue_flower_large_serving_dish.webp';
+import arraishProduct5 from '@/assets/images/royalimages/serina_blue_round_serving_dish.webp';
+import arraishProduct6 from '@/assets/images/royalimages/blue_flower_big_round_platter.webp';
 
 export type Category = {
   title: string;

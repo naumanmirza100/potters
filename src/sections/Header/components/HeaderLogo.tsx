@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import logoImg from '@/assets/images/logo.jpeg';
 
 export const HeaderLogo = () => {
   const navigate = useNavigate();
@@ -10,10 +11,9 @@ export const HeaderLogo = () => {
       >
         <div className="box-border caret-transparent inline-block text-center underline-offset-[3px] w-full md:text-start">
           <img
-            src="https://c.animaapp.com/mmu1yta2SFboEj/assets/55.png"
+            src={logoImg}
             alt="Arraish"
-            sizes="(max-width: 300px) 50vw, 150px"
-            className="aspect-[auto_150_/_47.9253] box-border caret-transparent inline max-w-full text-center underline-offset-[3px] align-baseline w-[150px] md:text-start"
+            className="h-10 w-auto md:h-12 inline align-middle object-contain"
           />
         </div>
       </button>
