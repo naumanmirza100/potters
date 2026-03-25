@@ -29,7 +29,7 @@ export const NewArrivals = () => {
           </div>
           <div className={`text-[15px] box-border caret-transparent leading-[27px] text-center mt-4 md:text-base md:leading-[28.8px] ${isVisible ? 'animate-fade-in-up animate-delay-600' : 'opacity-0'}`}>
             <button
-              onClick={() => navigate('/collections/new-arrival')}
+              onClick={() => navigate('/collections/all')}
               aria-label="View all new arrivals"
               className="relative text-white text-[15px] items-center bg-blue-950 box-border caret-transparent inline-flex justify-center tracking-[1px] leading-[18px] min-h-[47px] min-w-[122px] mt-2.5 px-[30px] rounded-[7px] btn-hover hover:bg-blue-900 transition-colors duration-200"
             >
