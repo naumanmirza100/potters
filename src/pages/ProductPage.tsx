@@ -157,8 +157,8 @@ export const ProductPage = () => {
           <div ref={ref} className="mt-14">
             <h2 className="text-blue-950 text-xl font-bold mb-6 tracking-wide">You May Also Like</h2>
             <div className="bg-blue-950 rounded-2xl px-4 md:px-8 py-6">
-              <ul role="list" className={`gap-x-3 flex flex-wrap gap-y-3 ${isVisible ? 'stagger-children' : ''}`}>
-                {related.map((p, i) => <ProductCard key={p.id} product={p} index={i} />)}
+              <ul role="list" className={`grid grid-cols-1 sm:grid-cols-2 ${related.length >= 3 ? 'lg:grid-cols-3' : ''} ${related.length >= 4 ? 'xl:grid-cols-4' : ''} gap-4 ${isVisible ? 'stagger-children' : ''}`}>
+                {related.map((p, i) => <ProductCard key={p.id} product={p} index={i} darkBg flexible />)}
               </ul>
             </div>
           </div>

@@ -7,6 +7,7 @@ type ProductCardProps = {
   product: Product;
   index?: number;
   darkBg?: boolean;
+  flexible?: boolean;
 };
 
 const CATEGORY_FALLBACK_IMAGES: Record<string, string[]> = {
@@ -39,7 +40,7 @@ function getFallbackImage(productName: string, category?: string): string {
   return '/assets/images/royalimages/blue-pattern-quarter-plate.jpg';
 }
 
-export const ProductCard = ({ product, index = 0, darkBg = false }: ProductCardProps) => {
+export const ProductCard = ({ product, index = 0, darkBg = false, flexible = false }: ProductCardProps) => {
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const [imageSrc, setImageSrc] = useState(product.imageSrc);
@@ -68,7 +69,7 @@ export const ProductCard = ({ product, index = 0, darkBg = false }: ProductCardP
 
   return (
     <li
-      className="text-[15px] box-border caret-transparent grow shrink-0 leading-[27px] max-w-[calc(50%_-_3px)] min-h-[auto] min-w-[auto] w-[calc(50%_-_3px)] md:text-base md:leading-[28.8px] md:max-w-[calc(25%_-_9px)] md:w-[calc(25%_-_9px)] opacity-0 animate-fade-in-up"
+      className={`text-[15px] box-border caret-transparent leading-[27px] min-h-[auto] min-w-[auto] md:text-base md:leading-[28.8px] opacity-0 animate-fade-in-up ${flexible ? 'w-full' : 'grow shrink-0 max-w-[calc(50%_-_3px)] w-[calc(50%_-_3px)] md:max-w-[calc(25%_-_9px)] md:w-[calc(25%_-_9px)]'}`}
       style={{ animationDelay: `${index * 80}ms`, animationFillMode: 'forwards' }}
     >
       <div className="relative h-full cursor-pointer" onClick={() => navigate(product.productHref)}>
