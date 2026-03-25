@@ -51,10 +51,12 @@ export const CollectionPage = () => {
   if (slug && COLLECTION_MAP[slug]) {
     products = COLLECTION_MAP[slug].products;
   } else {
+    const designLabel = designFamily?.label?.toLowerCase();
     products = ALL_PRODUCTS.filter((p) => {
       const inCategory = p.category.toLowerCase().replace(/[^a-z0-9]/g, '-') === slug || p.category.toLowerCase().replace(/\s+/g, '-') === slug;
       const inDesignFamily = p.designFamily?.toLowerCase().replace(/\s+/g, '-') === slug;
-      return inCategory || inDesignFamily;
+      const nameMatchesDesign = designLabel && p.productName.toLowerCase().includes(designLabel);
+      return inCategory || inDesignFamily || nameMatchesDesign;
     });
   }
 

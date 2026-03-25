@@ -69,7 +69,7 @@ export const SaleSection = () => {
             ) : (
               <ul role="list" aria-label="Sale products" className={`text-[15px] box-border caret-transparent gap-x-1.5 flex flex-wrap leading-[27px] list-none gap-y-1.5 mt-[15px] pl-0 md:text-base md:gap-x-3 md:leading-[28.8px] md:gap-y-3 md:mt-4 ${isVisible ? 'stagger-children' : ''}`}>
                 {displayProducts.map((product, i) => (
-                  <ProductCard key={product.id} product={product} index={i} />
+                  <ProductCard key={product.id} product={product} index={i} darkBg />
                 ))}
               </ul>
             )}

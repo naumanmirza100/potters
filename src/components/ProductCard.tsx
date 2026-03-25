@@ -6,6 +6,7 @@ import type { Product } from '@/data/products';
 type ProductCardProps = {
   product: Product;
   index?: number;
+  darkBg?: boolean;
 };
 
 const CATEGORY_FALLBACK_IMAGES: Record<string, string[]> = {
@@ -38,7 +39,7 @@ function getFallbackImage(productName: string, category?: string): string {
   return '/assets/images/royalimages/blue-pattern-quarter-plate.jpg';
 }
 
-export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
+export const ProductCard = ({ product, index = 0, darkBg = false }: ProductCardProps) => {
   const [isAdding, setIsAdding] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const [imageSrc, setImageSrc] = useState(product.imageSrc);
@@ -97,16 +98,16 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
           {/* Details */}
           <div className="box-border grid grow grid-rows-[max-content_minmax(0px,1fr)_max-content_auto] leading-[27px] w-full">
             <div className="row-start-2 min-h-[auto] min-w-[auto] py-[13px]">
-              <p className="text-neutral-800 text-[12.6px] tracking-[0.63px] leading-[16.2px] md:text-[13.65px] md:leading-[17.55px]">
+              <p className={`text-[12.6px] tracking-[0.63px] leading-[16.2px] md:text-[13.65px] md:leading-[17.55px] ${darkBg ? 'text-white' : 'text-neutral-800'}`}>
                 <span className="block text-[12.6px] leading-[16.2px] md:text-[13.65px] md:leading-[17.55px] line-clamp-2">
                   {product.productName}
                 </span>
               </p>
-              <div className="text-neutral-800 text-base tracking-[1px] leading-6 mt-[7px]">
+              <div className={`text-base tracking-[1px] leading-6 mt-[7px] ${darkBg ? 'text-white' : 'text-neutral-800'}`}>
                 {product.isSale ? (
                   <div className="flex flex-wrap gap-1 items-center">
-                    <s className="text-neutral-600 text-[13px] line-through">{product.originalPrice}</s>
-                    <span className="text-green-400 font-medium">{product.currentPrice}</span>
+                    <s className={`text-[13px] line-through ${darkBg ? 'text-neutral-400' : 'text-neutral-400'}`}>{product.originalPrice}</s>
+                    <span className={`font-medium ${darkBg ? 'text-white' : 'text-red-600'}`}>{product.currentPrice}</span>
                   </div>
                 ) : (
                   <span>{product.currentPrice}</span>
@@ -117,7 +118,7 @@ export const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
               <button
                 onClick={handleAddToCart}
                 disabled={isAdding}
-                className={`relative appearance-none text-white text-[15px] items-center bg-blue-950 caret-transparent flex justify-center tracking-[1px] leading-[18px] min-h-[47px] min-w-full text-center w-full p-2 rounded-[7px] btn-hover transition-all duration-200 ${isAdding ? 'opacity-70 cursor-wait' : ''} ${isAdded ? '!bg-green-600' : 'hover:bg-blue-900'}`}
+                className={`relative appearance-none text-white text-[15px] items-center caret-transparent flex justify-center tracking-[1px] leading-[18px] min-h-[47px] min-w-full text-center w-full p-2 rounded-[7px] btn-hover transition-all duration-200 ${darkBg ? 'bg-blue-800 hover:bg-blue-700' : 'bg-blue-950 hover:bg-blue-900'} ${isAdding ? 'opacity-70 cursor-wait' : ''} ${isAdded ? '!bg-green-600' : ''}`}
               >
                 {isAdding ? (
                   <span className="flex items-center gap-2">
