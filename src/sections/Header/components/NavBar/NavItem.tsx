@@ -1,6 +1,29 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { TABLEWARE_SUBCATEGORIES, DECOR_SUBCATEGORIES, DESIGN_FAMILY } from '@/data/categories';
+import { ALL_PRODUCTS, DINNER_SETS, TEA_SETS, PLATES_PLATTERS, BOWLS, SERVING_DISHES, KARAHIS, VASES, PLANTERS, POTTERY_JARS, LAMPS, TABLE_DECOR } from '@/data/products';
+
+const SLUG_COUNTS: Record<string, number> = {
+  "dinner-sets": DINNER_SETS.length,
+  "tea-sets-blue-pottery": TEA_SETS.length,
+  "plates-platters": PLATES_PLATTERS.length,
+  "bowls": BOWLS.length,
+  "serving-dishes": SERVING_DISHES.length,
+  "ceramic-blue-pottery-karahies": KARAHIS.length,
+  "vases": VASES.length,
+  "planters": PLANTERS.length,
+  "pottery-jars": POTTERY_JARS.length,
+  "lamps": LAMPS.length,
+  "table-decoration": TABLE_DECOR.length,
+};
+
+const getCollectionCount = (slug: string, label: string) => {
+  if (SLUG_COUNTS[slug] !== undefined) return SLUG_COUNTS[slug];
+  return ALL_PRODUCTS.filter(p =>
+    p.productName.toLowerCase().includes(label.toLowerCase()) ||
+    p.designFamily?.toLowerCase() === label.toLowerCase()
+  ).length;
+};
 
 export type NavItemProps = {
   label: string;
@@ -25,9 +48,9 @@ export const NavItem = (props: NavItemProps) => {
   };
 
   const getDropdownItems = () => {
-    if (props.label === 'Tableware') return TABLEWARE_SUBCATEGORIES.map((i) => ({ label: i.label, href: `/collections/${i.slug}`, count: i.count }));
-    if (props.label === 'Decor') return DECOR_SUBCATEGORIES.map((i) => ({ label: i.label, href: `/collections/${i.slug}`, count: i.count }));
-    if (props.label === 'Design Family') return DESIGN_FAMILY.map((i) => ({ label: i.label, href: `/collections/${i.slug}`, count: i.count, comingSoon: i.count === 0 }));
+    if (props.label === 'Tableware') return TABLEWARE_SUBCATEGORIES.map((i) => { const count = getCollectionCount(i.slug, i.label); return { label: i.label, href: `/collections/${i.slug}`, count, comingSoon: count === 0 }; });
+    if (props.label === 'Decor') return DECOR_SUBCATEGORIES.map((i) => { const count = getCollectionCount(i.slug, i.label); return { label: i.label, href: `/collections/${i.slug}`, count, comingSoon: count === 0 }; });
+    if (props.label === 'Design Family') return DESIGN_FAMILY.map((i) => { const count = getCollectionCount(i.slug, i.label); return { label: i.label, href: `/collections/${i.slug}`, count, comingSoon: count === 0 }; });
     return [];
   };
 

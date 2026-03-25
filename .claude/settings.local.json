@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -oP 'id: \"\"\"\"[^\"\"\"\"]+\"\"\"\", productName: \"\"\"\"[^\"\"\"\"]+\"\"\"\", .*?currentPrice: \"\"\"\"[^\"\"\"\"]+\"\"\"\"' src/data/products.ts)",
+      "Bash(grep -oP 'id: \"\"\"\"[^\"\"\"\"]+\"\"\"\".*?productName: \"\"\"\"[^\"\"\"\"]+\"\"\"\".*?currentPrice: \"\"\"\"[^\"\"\"\"]+\"\"\"\"' src/data/products.ts)",
+      "Bash(grep -n 'id: \"\"mug-large-set-of-2\"\"' src/data/products.ts)",
+      "Bash(node -e \":*)"
+    ]
+  }
+}

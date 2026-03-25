@@ -48,7 +48,7 @@ export const CartDrawer = () => {
           <div className="p-5 border-t border-neutral-200 space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-neutral-600 font-medium">Total</span>
-              <span className="text-blue-950 font-bold text-lg">Rs.{totalPrice.toLocaleString()}</span>
+              <span className="text-blue-950 font-bold text-lg">£{totalPrice.toLocaleString()}</span>
             </div>
             <a
               href="https://www.arraish.com/cart"
