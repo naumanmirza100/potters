@@ -105,7 +105,7 @@ export const CollectionPage = () => {
           <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
             <h1 className="text-white text-3xl md:text-5xl font-bold tracking-wide drop-shadow-lg">{collectionName}</h1>
             {category?.description && <p className="text-white/80 mt-2 max-w-xl text-sm md:text-base">{category.description}</p>}
-            {designFamily && <p className="text-white/80 mt-2 text-sm">{designFamily.count} products · {designFamily.priceRange}</p>}
+            {designFamily && <p className="text-white/80 mt-2 text-sm">{sorted.length} products · {designFamily.priceRange}</p>}
           </div>
         </div>
       )}

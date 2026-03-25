@@ -93,12 +93,12 @@ export const DECOR_SUBCATEGORIES = [
 ];
 
 export const DESIGN_FAMILY = [
-  { label: "Blue Felicity",   slug: "blue-felicity",   count: 48, priceRange: "£999 – 54,999", imageSrc: blueFelicityRoundPlatterLarge,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
-  { label: "Blue Pattern",    slug: "blue-pattern",    count: 12, priceRange: "£999 – 49,999", imageSrc: arraishProduct2,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
-  { label: "Tranquility",     slug: "tranquility",     count: 28, priceRange: "£999 – 47,999", imageSrc: arraishTranquilityBowl,  showBadge: false, primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-25.svg" },
-  { label: "Serina",          slug: "serina",          count: 45, priceRange: "£1,999 – 47,999", imageSrc: arraishProduct5,  showBadge: false, primaryIconSrc: "" },
-  { label: "Blue Flower",     slug: "blue-flower",     count: 26, priceRange: "£999 – 19,999", imageSrc: arraishProduct6,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
-  { label: "Blue Celico",     slug: "blue-celico",     count: 12, priceRange: "£1,199 – 4,999", imageSrc: arraishProduct3,  showBadge: false, primaryIconSrc: "" },
-  { label: "Spring Pattern",  slug: "spring-pattern",  count: 2,  priceRange: "£3,999 – 4,499", imageSrc: arraishProduct4,  showBadge: false, primaryIconSrc: "" },
+  { label: "Blue Felicity",   slug: "blue-felicity",   count: 11, priceRange: "£999 – 54,999", imageSrc: blueFelicityRoundPlatterLarge,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
+  { label: "Blue Pattern",    slug: "blue-pattern",    count: 74, priceRange: "£999 – 49,999", imageSrc: arraishProduct2,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
+  { label: "Tranquility",     slug: "tranquility",     count: 8, priceRange: "£999 – 47,999", imageSrc: arraishTranquilityBowl,  showBadge: false, primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-25.svg" },
+  { label: "Serina",          slug: "serina",          count: 16, priceRange: "£1,999 – 47,999", imageSrc: arraishProduct5,  showBadge: false, primaryIconSrc: "" },
+  { label: "Blue Flower",     slug: "blue-flower",     count: 12, priceRange: "£999 – 19,999", imageSrc: arraishProduct6,  showBadge: true,  primaryIconSrc: "https://c.animaapp.com/mmu1yta2SFboEj/assets/icon-26.svg" },
+  { label: "Blue Celico",     slug: "blue-celico",     count: 11, priceRange: "£1,199 – 4,999", imageSrc: arraishProduct3,  showBadge: false, primaryIconSrc: "" },
+  { label: "Spring Pattern",  slug: "spring-pattern",  count: 0,  priceRange: "£3,999 – 4,499", imageSrc: arraishProduct4,  showBadge: false, primaryIconSrc: "" },
   { label: "Slightly Broken", slug: "slightly-broken", count: 8,  priceRange: "£3 – £15",               imageSrc: blueFelicityKarahiSet,  showBadge: false, primaryIconSrc: "" },
 ];
